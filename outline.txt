@@ -1,0 +1,103 @@
+Inroduction
+
+- Everyday Powershell for System Administrators
+- Jimmy Taylor 
+- Systems Engineer with Boise School District
+
+- How many can raise your hand?
+- How many use Powershell already? 
+
+- Documents, Scripts, etc. > goo.gl/ooDVe5 (Github)
+    - MIT license just to say: do what you want, I'm not responsible if it breaks something.
+
+- Expectations
+    - I am *not* a Powershell master, nor would I call myself an expert.
+        - Don Jones:
+            - "There’s a perception that you’re not “good enough” to teach until you know everything"
+            - "Adult education often starts with the premise that instructors must establish their superior knowledge in order to maintain authority over the class"
+       - I don't know everything, but I know *something*
+       - We're all co-learners
+       - I'm just doing my part
+    - Somewhat introductory session on Powershell
+       - Going to attempt to explain the ideas behind how Powershell works
+    - Somewhat intermediary session on Powershell
+       - There are things that I will discuss that presuppose some knowledge about the topic
+    - Be curious
+       - You can start trying Powershell straight on your desktop
+       - You don't need to import modules or install components
+    - There are many ways to use Powershell 
+       - This is by design
+
+- Objectives
+    - Embolden you to use Powershell more
+    - Share what I've learned over the years
+    - Provide examples of Powershell in action and how to use it
+    - Provide resources to further study Powershell
+
+
+What is Powershell?
+- Wikipedia: task automation and configuration management framework from Microsoft, consisting of a command-line shell and associated scripting language
+- It was started the early 2000s by Jeffrey Snover and the idea evolved from a paper called the "Monad Manifesto"
+- Successor to CMD (command line)
+- Successor to VBScript (scripting)
+- $Windows -ne $WindowsPowershell
+- $WindowsPowershell -ne $PowershellCore
+    - Windows Powershell 
+        - Built on .NET Framework
+        - New development has stopped on version 5.1 (current version)
+    - Powershell Core
+        - Built on .NET Core
+        - Cross-platform (Windows, MacOS, Linux)
+
+Powershell Basics Crash Course
+- Powershell Help System
+    - Get-command -> gcm
+        - gcm 
+        -verb/-noun
+    - Get-Help -> help
+        - help <cmdlet> -Full/-Online/-ShowWindow
+        - help about_(topic)
+        - Update-Help
+    - Get-Member -> gm
+        - Get the properties or methods to manipulate
+- Types of commands
+    - Cmdlet
+        - Get-Process
+        - Restart-Computer
+    - Script
+        - installSomething.ps1
+    - Function
+        - help
+    - Applications
+        - ping
+        - nslookup
+    - Aliases
+        - Get-Alias -> gal
+        - gcm (Get-Command)
+        - cd (Set-Location)
+        - dir (Get-ChildItem)
+
+Powershell In Action
+- Get-Process
+    - Get-Process
+    - Stop-Process
+- Anatomy of a command 
+    - cmdlet -parameter -paramter | cmdlet 
+- Objects, Objects, Objects
+    - Everything is an object
+
+Windows
+- NetAdapter
+
+Active Directory
+-
+
+Applications
+
+SCCM
+- Import CM modules
+- updateOSDRefImage.ps1
+
+Final Thoughts and Tips
+
+Q & A
