@@ -1,3 +1,20 @@
+<#
+.SYNOPSIS
+  Grabs FQDNs
+.DESCRIPTION
+  Grabs FQDN from WIDA servers for reinstalls or new server deployments
+.INPUTS
+  All internal from AD. 
+.OUTPUTS
+  None
+.NOTES
+  Version:    	    1.0
+  Author:     	    Jimmy Taylor
+  Creation Date:    2018.02.03
+  Purpose/Change:   Initial script development
+
+#>
+
 $widaComputers = Get-ADComputer -Filter {Name -like "WIDAServer*"} -SearchBase "OU=TestingServers,OU=Servers,dc=contoso,dc=org"
 
 foreach ($widaComputer in $widaComputers) {

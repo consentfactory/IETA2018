@@ -1,7 +1,4 @@
 <#
-dhcpComputerMove.ps1
-Created 20170224
-Created by Jimmy Taylor
 .SYNOPSIS
 Script that moves devices from computers container and/or base devices OU 
 to their appropriate OU based on IP address.
@@ -14,6 +11,15 @@ there is a computer object in the Computers container or the Devices OU at
 the base of the main OU structure, and what IP address the device currently
 has. If the object is in the wrong location, the script moves the object to 
 a different location.
+.INPUTS
+  Internal to script. Grabs DHCP servers from Active Directory
+.OUTPUTS
+  dhcpComputerMove.csv - table that contains computer objects that have been moved
+.NOTES
+  Version:    	    1.0
+  Author:     	    Jimmy Taylor
+  Creation Date:    2017.02.24
+  Purpose/Change:   Added comments
 #>
 
 # Create table for later use
