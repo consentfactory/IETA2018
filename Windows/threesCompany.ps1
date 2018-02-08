@@ -1,3 +1,22 @@
+<#
+.SYNOPSIS
+  Plays "Three's Company" theme song in IE.
+.DESCRIPTION
+  Runs "Three's Company" theme song in Internet Explorer.
+  Used as prank. 
+  Run this as scheduled task on co-workers computer with 'System' account.
+  Then watch as "Come on knock on the door" commences. XD
+.INPUTS
+  None
+.OUTPUTS
+  None
+.NOTES
+  Version:    	    1.0
+  Author:     	    Jimmy Taylor
+  Creation Date:    2018.02.08
+  Purpose/Change:   Added comments
+#>
+
 # Run script as scheduled task in the background
 
 # Create new object that is Internet Explorer

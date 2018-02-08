@@ -1,28 +1,32 @@
 <#
-createDRCApplicationUsers.ps1
-Created 20171220
-Created by Jimmy Taylor
-
 .SYNOPSIS
-Script that creates unique DRC application for the user account assigned
-to each specfiic school.
-
+    Script that creates unique DRC application for the user account assigned
+    to each specfiic school.
 .DESCRIPTION
-The DRC application requires that each device at each specific school be
-configured with unique IDs for reporting to central servers. 
+    The DRC application requires that each device at each specific school be
+    configured with unique IDs for reporting to central servers. 
 
-CreateDRCApplicationUsers.ps1 ingests the school name and school ID from
-the CSV, then builds the SCCM application, deployment type, and the 
-application deployment to specific user collections. The script then 
-distributes the content to a distribution point group, thereby completing
-the task for deploying the application to specific users for specific
-schools.
+    CreateDRCApplicationUsers.ps1 ingests the school name and school ID from
+    the CSV, then builds the SCCM application, deployment type, and the 
+    application deployment to specific user collections. The script then 
+    distributes the content to a distribution point group, thereby completing
+    the task for deploying the application to specific users for specific
+    schools.
 
-The design of this deployment requires testing user accounts be part of
-school-specific SCCM collections.
+    The design of this deployment requires testing user accounts be part of
+    school-specific SCCM collections.
 
-Requires SCCM 1706+.
-
+    Requires SCCM 1706+.
+.INPUTS
+    "locations.csv" file contain school ID and location information from DRC
+.OUTPUTS
+    None
+.NOTES
+    Version:    	  1.0
+    Author:     	  Jimmy Taylor
+    Creation Date:    2018.02.08
+    Purpose/Change:   Added comments
+ 
 #>
 
 # Import CSV File. CSV file should have "location" and "id" headers
