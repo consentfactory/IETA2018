@@ -53,19 +53,20 @@ ForEach ($user in $usersCSV)
 
         # If Grade level is  PK, KG, or blank, do nothing; originally created accounts, but disabled this
         if ($user.office -eq "KG" -or $user.office -eq "PK" -or $user.office -eq "") {
-            #New-ADUser `
-            #-Name $user.name `
-            #-SamAccountName $user.samAccountName `
-            #-UserPrincipalName "$($user.name)$($schoolDomain)" `
-            #-DisplayName $user.displayName `
-            #-Surname $user.surName `
-            #-GivenName $user.givenName `
-            #-Description $user.description `
-            #-Office $user.office `
-            #-Enabled $True `
-            #-AccountPassword $(ConvertTo-SecureString $user.name -AsPlainText -Force) `
-            #-Path $esOU `
-            #-PassThru #| Out-Null
+            <#New-ADUser `
+            -Name $user.name `
+            -SamAccountName $user.samAccountName `
+            -UserPrincipalName "$($user.name)$($schoolDomain)" `
+            -DisplayName $user.displayName `
+            -Surname $user.surName `
+            -GivenName $user.givenName `
+            -Description $user.description `
+            -Office $user.office `
+            -Enabled $True `
+            -AccountPassword $(ConvertTo-SecureString $user.name -AsPlainText -Force) `
+            -Path $esOU `
+            -PassThru #| Out-Null
+            #>
         }
         # Accounts for Elementary School
         elseif ($grade -lt 6) {
