@@ -77,6 +77,8 @@ foreach ($school in $schools) {
     $dAvailDateTime = Get-Date
     $dComment = $appDescription
     
+    #region Application Creation
+
     # Create the Application
     New-CMApplication `
         -Name $appName `
@@ -99,9 +101,10 @@ foreach ($school in $schools) {
         -Comment $dtComments `
         -EnableBranchCache `
         -InstallationProgramVisibility Hidden `
-        -InstallationBehaviorType InstallForUser `
-        -ProductCode $dtProductCode `
-        -Force
+        -InstallationBehaviorType InstallForSystem `
+    	-LogonRequirementType WhereOrNotUserLoggedOn `
+    	-SourceUpdateProductCode $dtProductCode `
+    	-Force
     
     # Create an application deployment to the user collection
     New-CMApplicationDeployment `
@@ -115,13 +118,25 @@ foreach ($school in $schools) {
         -UserNotification HideAll `
         -OverrideServiceWindow $true `
         -DistributeContent
-    <#
-    Uncomment this section when testing is complete
+    
+    #endregion Application Creation
 
-    # Distributes the content to the distribution point group
-    Start-CMContentDistribution `
-        -ApplicationName $appName `
-        -DistributionPointGroupName $cdDistPtGroup
-        
+    #region Remove Application
+    
+    <#
+	# Remove the application deployment
+	# Use if you just want to remove where the application is deployed to
+	Remove-CMApplicationDeployment `
+    	-Name $appName `
+    	-CollectionName $dCollection `
+    	-Confirm:$false `
+    	-force
+    
+	# Remove the deployed Application
+	# Note: Must remove application deployment first, hence order
+	Remove-CMApplication -Name $appName -Force
     #>
+    
+    #endregion Remove Application
+   
 }
